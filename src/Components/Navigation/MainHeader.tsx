@@ -6,7 +6,7 @@ export default function MainHeader() {
     const [upcomingSessionsVisible, setUpcomingSessionsVisible] = useState(false)
 
     return (
-        <header>
+        <header className="main-header">
             <h1></h1>
             <nav>
                 <ul>
