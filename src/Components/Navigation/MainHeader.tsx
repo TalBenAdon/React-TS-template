@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { NavLink } from "react-router-dom";
+import Button from "../UI/Button";
 
 
 export default function MainHeader() {
@@ -12,7 +13,7 @@ export default function MainHeader() {
 
     return (
         <header className="main-header">
-            <h1></h1>
+            <h1>Title</h1>
             <nav>
                 <ul>
                     <li>
@@ -26,7 +27,7 @@ export default function MainHeader() {
                         </NavLink>
                     </li>
                     <li>
-                        <button onClick={showUpcomingSessions}>Upcoming Sessions</button>
+                        <Button onClick={showUpcomingSessions}>Upcoming Sessions</Button>
                     </li>
                 </ul>
             </nav>

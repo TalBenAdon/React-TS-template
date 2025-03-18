@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+
 * {
   margin: 0;
   padding: 0;
@@ -6,7 +8,42 @@
 }
 
 
+html,
+body {
+  height: 100%;
+  font-family: 'Roboto', sans-serif;
+  background: linear-gradient(90deg, #49464f 0, #373240 100%);
+}
+
+@media (min-width: 2560px) {
+  #root {
+    max-width: 90rem;
+    margin: 0 auto;
+  }
+}
+
+@media (min-width:1890px) {}
+
+
+
+#root {
+  height: 100%;
+
+}
+
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 0 0 0;
+}
+
 .main-header a {
   text-decoration: none;
   color: #c6a8f5;
+}
+
+.main-header nav ul {
+  display: flex;
+  gap: 1.5rem;
 }
