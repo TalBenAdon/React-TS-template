@@ -13,16 +13,16 @@ export default function MainHeader() {
 
     return (
         <header className="main-header">
-            <h1>Title</h1>
+            <h1>Mentoring</h1>
             <nav>
                 <ul>
                     <li>
-                        <NavLink to={"/"} end>
+                        <NavLink to={"/"} className={({ isActive }) => isActive ? 'active' : ''} end>
                             Our Mission
                         </NavLink>
                     </li>
                     <li>
-                        <NavLink to={"sessions"}>
+                        <NavLink to={"sessions"} className={({ isActive }) => isActive ? 'active' : ''}>
                             Browse Sessions
                         </NavLink>
                     </li>
