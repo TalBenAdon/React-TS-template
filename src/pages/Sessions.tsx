@@ -3,7 +3,7 @@ import { SESSIONS } from "../dummy-sessions";
 
 export default function SessionsPage() {
     return (
-        <main>
+        <main className="sessions-page">
             <header>
                 <h2>sessionsTitle</h2>
                 <p>sessions explainations</p>
