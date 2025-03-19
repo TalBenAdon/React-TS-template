@@ -13,7 +13,7 @@ let router = createBrowserRouter([
     path: "/",
     Component: Root,
     children: [
-      { index: true, Component: Home, },
+      { index: true, Component: Home },
       { path: "sessions", Component: SessionsPage },
       { path: "sessions:id", Component: SessionPage }
     ]
