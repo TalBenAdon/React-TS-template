@@ -149,6 +149,20 @@ body {
   background-color: #a16cf7
 }
 
+.sessions-page {
+  padding: 1rem;
+}
+
+.sessions-page h2 {
+  padding: 1.5rem 0 0.5rem 0;
+  font-size: 1.5rem;
+  color: #bba4de;
+}
+
+.sessions-page header p {
+  color: #b6adc5;
+  padding-bottom: 0.5rem;
+}
 
 .sessions-list {
   display: grid;
@@ -193,6 +207,7 @@ body {
 
 .session-item {
   background-color: #352e41;
+  height: 100%;
   border-radius: 0.5rem;
   overflow: hidden;
   box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
