@@ -183,7 +183,7 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  flex: 1 0;
+  flex: 1;
   padding: 1rem;
 
 }
