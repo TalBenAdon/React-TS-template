@@ -37,7 +37,7 @@ export default function SessionPage() {
                         <p><Button onClick={() => { }}>Book Session</Button></p>
                     </div>
                 </header>
-                <p></p>
+                <p className="content">{currentSession.description}</p>
             </article>
         </main>
     )
