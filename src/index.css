@@ -217,3 +217,41 @@ body {
   display: flex;
   flex-direction: column;
 }
+
+.session-page {
+  padding: 1.5rem;
+}
+
+.session-page img {
+  width: 30rem;
+  height: 20rem;
+  object-fit: cover;
+  border-radius: 0.5rem;
+
+}
+
+.session-page header {
+  display: flex;
+  gap: 1.5rem;
+  justify-content: center;
+}
+
+.session-page h2 {
+  font-size: 2.5rem;
+  color: #e1d8f0;
+}
+
+.session-details {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.session-details h2 {
+  margin-bottom: 1rem;
+}
+
+.session-page time {
+  color: #b6adc5;
+  font-size: 0.85rem;
+}
