@@ -233,7 +233,17 @@ body {
 .session-page header {
   display: flex;
   gap: 1.5rem;
-  justify-content: center;
+}
+
+.session-page .content {
+  background-color: #5a5563;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.26);
+  color: #e1d8f0;
+  font-size: 1.25rem;
+  padding: 1rem;
+  margin: 2rem auto;
+  white-space: pre-wrap;
 }
 
 .session-page h2 {
