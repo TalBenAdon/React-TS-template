@@ -1,6 +1,6 @@
-import { createSlice } from "@reduxjs/toolkit";
+import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
 
-type Session = {
+export type Session = {
     id: string;
     title: string;
     summary: string;
@@ -10,18 +10,27 @@ type Session = {
     image: string;
 }
 
-type SessionsState = {
-    sessions: Session[]
+type BookedSession = {
+    id: string,
+    title: string,
+    summary: string,
+    date: string,
 }
 
-const initialState: SessionsState = {
+type BookedSessionsState = {
+    sessions: BookedSession[]
+}
+
+const initialState: BookedSessionsState = {
     sessions: []
 }
 export const sessionsSlice = createSlice({
     name: 'sessions',
     initialState,
     reducers: {
-        addToUserSessions() { },
+        addToBookedSessions(state, action: PayloadAction<BookedSession>) {
+            const sessionIndex = state.sessions.findIndex((session) => session.id === action.payload.id)
+        },
         removeFromUserSessions() { },
     }
 })
