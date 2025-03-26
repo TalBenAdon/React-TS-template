@@ -1,10 +1,12 @@
 import { useParams } from "react-router-dom"
 import { SESSIONS } from "../dummy-sessions";
 import Button from "../Components/UI/Button";
+import { useState } from "react";
 
 
 export default function SessionPage() {
     const params = useParams<{ id: string }>()
+    const [isBooking, setIsBooking] = useState(false);
 
     const sessionId = params.id
     const currentSession = SESSIONS.find(session => session.id === sessionId)
@@ -15,6 +17,14 @@ export default function SessionPage() {
                 <p>Session not found!</p>
             </main>
         )
+    }
+
+    function handleStartBooking() {
+        setIsBooking(true)
+    }
+
+    function handleStopBooking() {
+        setIsBooking(false)
     }
 
     return (
@@ -34,7 +44,7 @@ export default function SessionPage() {
 
                             }
                         </time>
-                        <p><Button onClick={() => { }}>Book Session</Button></p>
+                        <p><Button onClick={handleStartBooking}>Book Session</Button></p>
                     </div>
                 </header>
                 <p className="content">{currentSession.description}</p>
