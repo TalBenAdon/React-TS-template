@@ -28,9 +28,17 @@ export const sessionsSlice = createSlice({
     name: 'sessions',
     initialState,
     reducers: {
-        addToBookedSessions(state, action: PayloadAction<BookedSession>) {
-            const sessionIndex = state.sessions.findIndex((session) => session.id === action.payload.id)
+        BookSession(state, action: PayloadAction<BookedSession>) {
+            const isBooked = state.sessions.some((session) => session.id === action.payload.id)
+            if (!isBooked) {
+                state.sessions.push(action.payload)
+            }
+            console.log(state.sessions);
+
         },
-        removeFromUserSessions() { },
+        CancelSession(state, action: PayloadAction<{ id: string }>) {
+            state.sessions = state.sessions.filter((session) => session.id !== action.payload.id)
+            console.log(state.sessions);
+        },
     }
 })

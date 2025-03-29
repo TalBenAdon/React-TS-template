@@ -6,6 +6,8 @@ import Home from "./pages/Home"
 import SessionsPage from "./pages/Sessions"
 import SessionPage from "./pages/Session"
 import './index.css'
+import { Provider } from 'react-redux'
+import { store } from './store/store'
 
 
 let router = createBrowserRouter([
@@ -23,6 +25,8 @@ let router = createBrowserRouter([
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <Provider store={store}>
+      <RouterProvider router={router} />
+    </Provider>
   </StrictMode>,
 )
