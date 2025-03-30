@@ -7,3 +7,7 @@ export const store = configureStore({
         sessions: sessionsSlice.reducer
     }
 });
+
+
+
+export type AppDispatch = typeof store.dispatch;

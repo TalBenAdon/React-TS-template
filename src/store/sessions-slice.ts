@@ -42,3 +42,5 @@ export const sessionsSlice = createSlice({
         },
     }
 })
+
+export const { BookSession, CancelSession } = sessionsSlice.actions;
