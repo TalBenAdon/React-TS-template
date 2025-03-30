@@ -10,15 +10,9 @@ export type Session = {
     image: string;
 }
 
-type BookedSession = {
-    id: string,
-    title: string,
-    summary: string,
-    date: string,
-}
 
 type BookedSessionsState = {
-    sessions: BookedSession[]
+    sessions: Session[]
 }
 
 const initialState: BookedSessionsState = {
@@ -28,7 +22,7 @@ export const sessionsSlice = createSlice({
     name: 'sessions',
     initialState,
     reducers: {
-        BookSession(state, action: PayloadAction<BookedSession>) {
+        BookSession(state, action: PayloadAction<Session>) {
             const isBooked = state.sessions.some((session) => session.id === action.payload.id)
             if (!isBooked) {
                 state.sessions.push(action.payload)
