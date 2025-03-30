@@ -2,6 +2,7 @@ import { useParams } from "react-router-dom"
 import { SESSIONS } from "../dummy-sessions";
 import Button from "../Components/UI/Button";
 import { useState } from "react";
+import BookSession from "../Components/Sessions/BookSession";
 
 
 export default function SessionPage() {
@@ -29,6 +30,7 @@ export default function SessionPage() {
 
     return (
         <main className="session-page">
+            {isBooking && (<BookSession session={currentSession} onDone={handleStopBooking} />)}
             <article>
                 <header>
                     <img src={currentSession.image} alt={currentSession.title} />
