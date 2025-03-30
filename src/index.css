@@ -133,6 +133,8 @@ body {
   text-underline-offset: 4px;
 }
 
+
+
 .button {
   border: none;
   padding: 0.5rem 1.5rem;
@@ -147,6 +149,11 @@ body {
 .button:hover,
 .button:active {
   background-color: #a16cf7
+}
+
+.button.button--text-only {
+  background-color: transparent;
+  color: #ccb2f6;
 }
 
 .sessions-page {
@@ -220,6 +227,7 @@ body {
 
 .session-page {
   padding: 1.5rem;
+
 }
 
 .session-page img {
@@ -244,6 +252,7 @@ body {
   padding: 1rem;
   margin: 2rem auto;
   white-space: pre-wrap;
+  animation: fade-slide-down 0.3s ease-out forwards;
 }
 
 .session-page h2 {
@@ -264,4 +273,79 @@ body {
 .session-page time {
   color: #b6adc5;
   font-size: 0.85rem;
+}
+
+.modal {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  animation: modal-slide-down 0.3s ease-out forwards;
+  width: 100%;
+  max-width: 35rem;
+  background-color: #6b5e81;
+  color: #edeaf3;
+  border-radius: 8px;
+  border: none;
+  padding: 1rem;
+}
+
+.modal h2 {
+  margin-bottom: 1rem;
+}
+
+.modal::backdrop {
+  background-color: rgba(0, 0, 0, 0.75);
+}
+
+.modal-buttons {
+  display: flex;
+  justify-content: flex-end;
+  padding-top: 1rem;
+  gap: 1rem;
+}
+
+@keyframes fade-slide-down {
+  from {
+    opacity: 0;
+    transform: translateY(-1rem);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes modal-slide-down {
+  from {
+    opacity: 0;
+    transform: translate(-50%, calc(-50% - 1rem));
+
+  }
+
+  to {
+    opacity: 1;
+    transform: translate(-50%, -50%);
+
+  }
+}
+
+
+.ui-input label {
+  display: block;
+  font-size: 0.85rem;
+  font-weight: bold;
+  margin-bottom: 0.25rem;
+  color: #d3cedc;
+  text-transform: uppercase;
+}
+
+.ui-input input {
+  width: 100%;
+  max-width: 35rem;
+  font: inherit;
+  font-size: 1.25rem;
+  border: 1px solid #d3cedc;
+  border-radius: 4px;
+  padding: 0.5rem;
 }

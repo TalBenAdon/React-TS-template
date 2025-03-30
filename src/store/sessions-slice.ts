@@ -27,12 +27,10 @@ export const sessionsSlice = createSlice({
             if (!isBooked) {
                 state.sessions.push(action.payload)
             }
-            console.log(state.sessions);
 
         },
         CancelSession(state, action: PayloadAction<{ id: string }>) {
             state.sessions = state.sessions.filter((session) => session.id !== action.payload.id)
-            console.log(state.sessions);
         },
     }
 })
