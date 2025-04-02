@@ -1,6 +1,7 @@
 import { useEffect, useRef } from "react";
 import Modal, { ModalHandle } from "../UI/Modal";
 import Button from "../UI/Button";
+import { useBookedSessionsSelector } from "../../store/hooks";
 
 type UpcomingSessionsProps = {
     onClose: () => void;
@@ -9,9 +10,16 @@ type UpcomingSessionsProps = {
 export default function UpcomingSessions({ onClose }: UpcomingSessionsProps) {
     const modal = useRef<ModalHandle>(null)
 
+    const bookedSessions = useBookedSessionsSelector((state) =>
+        state.sessions
+    )
+
     useEffect(() => {
         if (modal.current) {
             modal.current.open()
+
+
+
         }
     }, [])
 
