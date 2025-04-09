@@ -9,5 +9,5 @@ export const store = configureStore({
 });
 
 
-
+export type RootState = ReturnType<typeof store.getState>  // we take the return type of the type of "getState" method as our rootState type
 export type AppDispatch = typeof store.dispatch;

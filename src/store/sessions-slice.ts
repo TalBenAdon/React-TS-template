@@ -11,28 +11,26 @@ export type Session = {
 }
 
 
-type BookedSessionsState = {
-    sessions: Session[]
-}
+type BookedSessionsState = Session[]
 
-const initialState: BookedSessionsState = {
-    sessions: []
-}
+
+const initialState: BookedSessionsState = []
+
 export const sessionsSlice = createSlice({
     name: 'sessions',
     initialState,
     reducers: {
-        BookSession(state, action: PayloadAction<Session>) {
-            const isBooked = state.sessions.some((session) => session.id === action.payload.id)
+        bookSession(state, action: PayloadAction<Session>) {
+            const isBooked = state.some((session) => session.id === action.payload.id)
             if (!isBooked) {
-                state.sessions.push(action.payload)
+                state.push(action.payload)
             }
 
         },
-        CancelSession(state, action: PayloadAction<{ id: string }>) {
-            state.sessions = state.sessions.filter((session) => session.id !== action.payload.id)
+        cancelSession(state, action: PayloadAction<string>) {
+            return state.filter((session) => session.id !== action.payload)
         },
     }
 })
 
-export const { BookSession, CancelSession } = sessionsSlice.actions;
+export const { bookSession, cancelSession } = sessionsSlice.actions;

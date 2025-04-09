@@ -349,3 +349,25 @@ body {
   border-radius: 4px;
   padding: 0.5rem;
 }
+
+.upcoming-session {
+  background-color: #3b3545;
+  border-radius: 6px;
+  padding: 1rem;
+  margin: 1rem 0;
+  display: flex;
+  justify-content: space-between;
+
+}
+
+.upcoming-session h3 {
+  color: #c7b0ee;
+}
+
+.upcoming-session p {
+  margin: 0.5rem 0;
+}
+
+.upcoming-session .actions {
+  margin: -0.5rem 0;
+}
