@@ -2,7 +2,7 @@ import { FormEvent, useEffect, useRef } from "react";
 import { Session } from "../../store/sessions-slice"
 import Modal, { ModalHandle } from "../UI/Modal";
 import { useBookedSessionsDispatch } from "../../store/hooks";
-import { BookSession as AddSession } from "../../store/sessions-slice";
+import { bookSession as AddSession } from "../../store/sessions-slice";
 import Input from "../UI/Input";
 import Button from "../UI/Button";
 
