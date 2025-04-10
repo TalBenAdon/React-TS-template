@@ -6,16 +6,19 @@ import Home from "./pages/Home"
 import SessionsPage from "./pages/Sessions"
 import SessionPage from "./pages/Session"
 import './index.css'
+import { Provider } from 'react-redux'
+import { store } from './store/store'
 
+// *** Simple react-router using router provider *** // 
 
 let router = createBrowserRouter([
   {
     path: "/",
     Component: Root,
     children: [
-      { index: true, Component: Home, },
+      { index: true, Component: Home },
       { path: "sessions", Component: SessionsPage },
-      { path: "sessions:id", Component: SessionPage }
+      { path: "sessions/:id", Component: SessionPage }
     ]
   }
 ])
@@ -23,6 +26,8 @@ let router = createBrowserRouter([
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <Provider store={store}>
+      <RouterProvider router={router} />
+    </Provider>
   </StrictMode>,
 )
