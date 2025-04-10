@@ -1,12 +1,10 @@
 import Button from "../UI/Button"
+import { Session } from "../../store/sessions-slice"
+
+// *** component containing session item structure *** // 
 
 // type of each session item
-type SessionItemProps = {
-    id: string
-    title: string
-    summary: string
-    image: string
-}
+type SessionItemProps = Pick<Session, "id" | "title" | "summary" | "image">
 
 
 export default function SessionItem({ id, title, summary, image }: SessionItemProps) {
