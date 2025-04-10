@@ -5,27 +5,34 @@ import { useBookedSessionsDispatch, useBookedSessionsSelector } from "../../stor
 import { cancelSession } from "../../store/sessions-slice";
 import UpcomingSession from "./UpcomingSession";
 
+// *** component containing and managing upcoming sessions *** // 
+
+// Because the upcoming sessions is opening a modal, we give it an "onClose" prop from the MainHeader
 type UpcomingSessionsProps = {
     onClose: () => void;
 }
 
+
 export default function UpcomingSessions({ onClose }: UpcomingSessionsProps) {
     const modal = useRef<ModalHandle>(null)
+
+    // redux dispatch
     const dispatch = useBookedSessionsDispatch();
 
+    // redux selector
     const bookedSessions = useBookedSessionsSelector((state) =>
         state.sessions
     )
 
+    
     function handleCancelSession(sessionId: string) {
         dispatch(cancelSession(sessionId))
     }
 
+    
     useEffect(() => {
         if (modal.current) {
             modal.current.open()
-
-
 
         }
     }, [])
