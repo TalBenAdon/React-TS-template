@@ -1,6 +1,9 @@
 import { forwardRef, type ReactNode, useImperativeHandle, useRef } from "react";
 import { createPortal } from "react-dom";
 
+// *** modal (popup) implemented using useImperativeHandle *** // 
+// *** the modal is handled imperatively in contrast to react's declerative nature *** // 
+
 // Defines the methods exposed to the parent component when a ref is passed to the modal (in this case, the open method).
 export type ModalHandle = {
     open: () => void;
