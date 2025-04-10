@@ -3,6 +3,7 @@ import { NavLink } from "react-router-dom";
 import Button from "../UI/Button";
 import UpcomingSessions from "../Sessions/UpcomingSessions";
 
+// Typical Navlink Header with "isActive" classes
 
 export default function MainHeader() {
     const [upcomingSessionsVisible, setUpcomingSessionsVisible] = useState(false)

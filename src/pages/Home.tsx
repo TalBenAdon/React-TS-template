@@ -1,6 +1,8 @@
 
 import { HOMEPAGE_INFO } from "../homepage-info"
 
+// *** home page layout *** // 
+
 export default function Home() {
     return (
         <main className="home-page">

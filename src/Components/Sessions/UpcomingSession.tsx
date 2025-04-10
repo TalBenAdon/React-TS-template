@@ -1,11 +1,12 @@
 import { type Session } from "../../store/sessions-slice"
 import Button from "../UI/Button";
 
-type UpcomingSessionProps = {
+// *** an upcoming session component *** // 
 
+// Upcoming session uses only some data of the session object, so typescript "Pick" is used
+type UpcomingSessionProps = {
     session: Pick<Session, 'id' | 'title' | 'summary' | 'date'>;
     onCancel: () => void;
-
 }
 
 export default function UpcomingSession({ session, onCancel }: UpcomingSessionProps) {

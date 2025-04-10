@@ -6,6 +6,9 @@ import { bookSession as AddSession } from "../../store/sessions-slice";
 import Input from "../UI/Input";
 import Button from "../UI/Button";
 
+// *** component containing session item structure *** // 
+
+
 type BookSessionProps = {
     session: Session
     onDone: () => void;
@@ -13,6 +16,8 @@ type BookSessionProps = {
 
 export default function BookSession({ session, onDone }: BookSessionProps) {
     const modal = useRef<ModalHandle>(null)
+
+    //redux dispatch
     const dispatch = useBookedSessionsDispatch();
 
     useEffect(() => {
@@ -21,12 +26,13 @@ export default function BookSession({ session, onDone }: BookSessionProps) {
         }
     }, [])
 
+    //Conventional handleSubmit. the type of the event is FormEvent whos generic is HTMLFormElement
     function handleSubmit(event: FormEvent<HTMLFormElement>) {
         event.preventDefault();
 
         const formData = new FormData(event.currentTarget);
         const data = Object.fromEntries(formData)
-        console.log(data); // normally sent to server
+        console.log(data); // normally sent to server with session info
         dispatch(AddSession(session))
         onDone();
     }

@@ -1,6 +1,7 @@
 import SessionsList from "../Components/Sessions/SessionsList";
 import { SESSIONS } from "../dummy-sessions";
 
+// *** sessions page layout *** // 
 export default function SessionsPage() {
     return (
         <main className="sessions-page">

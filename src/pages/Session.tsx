@@ -4,6 +4,7 @@ import Button from "../Components/UI/Button";
 import { useState } from "react";
 import BookSession from "../Components/Sessions/BookSession";
 
+// *** session page layout *** // 
 
 export default function SessionPage() {
     const params = useParams<{ id: string }>()

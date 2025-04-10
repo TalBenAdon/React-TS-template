@@ -1,12 +1,12 @@
 import SessionItem from "./SessionItem";
+import { Session } from "../../store/sessions-slice";
 
+// *** component containing the list of available sessions *** // 
+
+
+// Props types of session[]. Pick used for comfortable usage.
 type SessionsListProps = {
-    sessions: {
-        id: string
-        title: string
-        summary: string
-        image: string
-    }[];
+    sessions: Pick<Session, "id" | "title" | "summary" | "image">[]
 }
 
 export default function SessionsList({ sessions }: SessionsListProps) {

@@ -1,6 +1,7 @@
 import { configureStore } from "@reduxjs/toolkit";
-
 import { sessionsSlice } from "./sessions-slice.ts";
+
+// *** Store configuration for redux. We only have one slice *** // 
 
 export const store = configureStore({
     reducer: {
@@ -10,4 +11,4 @@ export const store = configureStore({
 
 
 export type RootState = ReturnType<typeof store.getState>  // we take the return type of the type of "getState" method as our rootState type
-export type AppDispatch = typeof store.dispatch;
+export type AppDispatch = typeof store.dispatch;    // The type of our enitre redux tree 
